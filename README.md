@@ -52,8 +52,8 @@ bun install
 Create a `.env` file in the project root with your Supabase credentials:
 
 ```bash
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL= https://pjtipqmwiyjryfckhewa.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqdGlwcW13aXlqcnlmY2toZXdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMjI0NTgsImV4cCI6MjA4MTY5ODQ1OH0.CSsof5LeajnKFncAOg5c8o6-IPgiCgf3Wgt7foQzfns
 ```
 
 These are read in [`src/integrations/supabase/client.ts`](src/integrations/supabase/client.ts).
