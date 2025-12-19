@@ -67,8 +67,8 @@ export const Footer = () => {
             <ul className="space-y-3 font-body text-background/60 text-sm">
               <li>123 Premium Avenue</li>
               <li>Suite 100, Metro City</li>
-              <li>+1 (555) 123-4567</li>
-              <li>hello@realestatex.com</li>
+              <li>+91 9302755266</li>
+              <li>borsesarthak@realestatex.com</li>
             </ul>
           </div>
         </div>
