@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary - Deep Navy Blue for trust & professionalism */
+    --primary: 217 91% 22%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Accent - Energetic Orange for CTAs */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surfaces */
+    --background: 210 20% 98%;
+    --foreground: 220 20% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+    
+    /* Secondary - Light Blue Gray */
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 220 20% 15%;
+    
+    /* Muted */
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Borders & Inputs */
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 217 91% 22%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Real Estate Colors */
+    --navy: 217 91% 22%;
+    --navy-light: 217 60% 35%;
+    --navy-dark: 217 91% 15%;
+    --orange: 24 95% 53%;
+    --orange-hover: 24 95% 45%;
+    --gold: 43 74% 66%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 22% / 0.95) 0%, hsl(217 91% 15% / 0.9) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 45%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(217 91% 22% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(217 91% 22% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(217 91% 22% / 0.2);
+    --shadow-glow: 0 0 40px hsl(24 95% 53% / 0.3);
+    
+    /* Sidebar */
+    --sidebar-background: 217 91% 22%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 60% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 60% 35%;
+    --sidebar-ring: 24 95% 53%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 20% 98%;
+    
+    --card: 220 20% 14%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 220 20% 14%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 60%;
+    
+    --accent: 217 91% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 24 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--gold)) 100%);
+  }
+  
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-cta-gradient {
+    background: var(--gradient-cta);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(24 95% 53% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(24 95% 53% / 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
